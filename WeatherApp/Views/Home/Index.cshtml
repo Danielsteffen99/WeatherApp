@@ -1,0 +1,24 @@
+﻿@model WeatherForecast.Root
+@{
+    ViewData["Weather"] = "Home Page";
+}
+
+<div class="text-center">
+<p>
+    <h1> Weather over @Model.sys.country</h1>
+    Country - @Model.sys.country
+    <br />
+    Tempetures - @Model.main.temp.ToString("0.00") C
+    <br />
+    Feels Like - @Model.main.feels_like.ToString("0.00") C
+    <br />
+    Wind Speed - @Model.wind.speed.ToString()/ms
+    <br />
+    @foreach (var item in Model.weather)
+    {
+        <img src="http://openweathermap.org/img/wn/@item.icon@@2x.png"/>
+    }
+
+
+</p>
+</div>
